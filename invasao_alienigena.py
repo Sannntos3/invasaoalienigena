@@ -7,7 +7,7 @@ class EspacoNave:
         self.tela_jogo_ia = tela_jogo_ia
 
         # Carrega a espaço-nave e obtém o retângulo dela.
-        self.imagem = pygame.image.load("imagem_espaco_nave/espaco_nave.bmp")
+        self.imagem = pygame.image.load("imagem_espaco_nave/espaconave.bmp")
         self.retangulo_da_espaco_nave = self.imagem.get_rect()
         self.retangulo_da_tela = tela_jogo_ia.get_rect()
 
