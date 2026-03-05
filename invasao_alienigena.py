@@ -1,24 +1,7 @@
 import pygame
 import sys
 import configuracoes_da_tela as cf
-
-class EspacoNave:
-    def __init__(self, tela_jogo_ia):
-        self.tela_jogo_ia = tela_jogo_ia
-
-        # Carrega a espaço-nave e obtém o retângulo dela.
-        self.imagem = pygame.image.load("imagem_espaco_nave/espaconave.bmp")
-        self.retangulo_da_espaco_nave = self.imagem.get_rect()
-        self.retangulo_da_tela = tela_jogo_ia.get_rect()
-
-        # Iniciar a espaço nave no ponto inferior da tela.
-        self.retangulo_da_espaco_nave.centerx = self.retangulo_da_tela.centerx
-        self.retangulo_da_espaco_nave.bottom = self.retangulo_da_tela.bottom
-
-    def desenhar_imagem(self):
-        # Desenha a espaço-nave na parte inferior da tela.
-        self.tela_jogo_ia.blit(self.imagem, self.retangulo_da_espaco_nave)
-
+import espaco_nave as en
 
 def run_game():
     pygame.init() # Inicializa os modúlos de pygame.
@@ -27,7 +10,7 @@ def run_game():
     # para poder gerar um superfície que vai comportar elementos gráficos.
     pygame.display.set_caption("Invasão alienígena") # Delimitação do nome da janela.
 
-    espaco_nave = EspacoNave(tela_jogo_ia)
+    espaco_nave = en.EspacoNave(tela_jogo_ia)
 
     cor_de_fundo = (configuracoes_da_tela.cor_de_fundo) # Cor de fundo da tela de jogo
 
